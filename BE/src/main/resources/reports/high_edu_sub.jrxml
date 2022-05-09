@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="work_sub" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="70e064f2-1965-436a-8a0b-dee406da6360">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="award" class="java.lang.String">
+		<fieldDescription><![CDATA[award]]></fieldDescription>
+	</field>
+	<field name="areaOfStudy" class="java.lang.String">
+		<fieldDescription><![CDATA[areaOfStudy]]></fieldDescription>
+	</field>
+	<field name="affiliatedInstitute" class="java.lang.String">
+		<fieldDescription><![CDATA[affiliatedInstitute]]></fieldDescription>
+	</field>
+	<field name="institiuteOfStudy" class="java.lang.String">
+		<fieldDescription><![CDATA[institiuteOfStudy]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="result" class="java.lang.Integer">
+		<fieldDescription><![CDATA[result]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="10" y="0" width="160" height="30" uuid="b8d6d151-4ab0-46cb-9427-7b1c2f06ad41"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HIGHER EDUCATION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="30" width="558" height="1" uuid="131932ca-f1bd-43c3-86ae-447075be3cf7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="104" splitType="Stretch">
+			<textField>
+				<reportElement x="170" y="0" width="100" height="13" uuid="53c516a1-ff7b-45f0-b122-4d5acb5115df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{award}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="14" width="230" height="13" uuid="671d5cb8-df0f-4c7b-90ea-d2d23a528012">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{areaOfStudy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="28" width="230" height="13" uuid="56affa24-2e15-4cd8-a87c-62c02a0abfa5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{affiliatedInstitute}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="42" width="414" height="13" uuid="917caa32-93eb-477c-82b3-b9eb966600c5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{institiuteOfStudy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="56" width="414" height="13" uuid="80c3a59f-b568-4077-b325-c6e41218eeb5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="70" width="230" height="13" uuid="79751d24-8263-4abd-8187-2bd8eae04d53">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{result}==1?"Pass":$F{result}==2?"Pending results":"Currently following"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="0" width="80" height="13" uuid="e1f045f7-25b4-44d5-9955-ddf4b2312642">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Award]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="14" width="80" height="13" uuid="c1a2a68d-a1e8-48e0-a133-e266c1df8be3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Area of study]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="28" width="80" height="13" uuid="e2eb71e0-a727-4329-9565-73da1165b48f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Affiliated institute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="42" width="80" height="13" uuid="f824dc71-118e-4fce-a7fd-1370e0a93d8d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Institute of study]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="56" width="80" height="13" uuid="468d6793-57dc-46d5-ab02-ebf827a909c2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="70" width="80" height="13" uuid="531e451e-8372-47d1-aa74-f4f66d2ae80a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Result]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

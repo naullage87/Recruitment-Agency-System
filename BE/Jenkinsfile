@@ -1,0 +1,106 @@
+//change display name in jenkins
+currentBuild.displayName = "sonar-integration-#${currentBuild.number}"
+
+pipeline {
+    agent any
+	
+    /* environment {
+        //specify maven bin location and add it to the PATH variable
+       PATH = "C:\\Program Files\\Apache Maven\\apache-maven-3.8.1"
+    } */
+  
+  tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "Maven"
+    }
+     
+
+    stages {
+
+        stage('Build') {
+            steps {
+               // bat "mvn -f /API/myallianz/pom.xml clean install -DskipTests=true -Dmaven.javadoc.skip=true -Dcheckstyle.skip=true -B -V"
+                  bat "mvn -f pom.xml clean install"
+                 //bat "mvn -f API/myallianz/pom.xml clean install -Ddownloader.quick.query.timestamp=false"
+
+             // bat "mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -Dcheckstyle.skip=true -B -V"
+
+             // dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
+              
+              echo "Built sucess....";
+            }
+        }
+
+        /* stage('OWASP Dependency Check') {
+                    steps {
+                        bat 'dependencyCheckAnalyze'
+                    }
+                } */
+
+        stage('Unit-Test') {
+            steps {
+                bat "mvn -f pom.xml verify -P utest"
+          echo "Processing unit testing...";
+            }
+        }
+
+        stage('Integration-Test') {
+            steps {
+                bat "mvn -f pom.xml verify -P itest"
+              echo "integration testing...";
+            }
+        }
+
+
+        stage('Sonarqube') {
+            // environment {
+            //     scannerHome = tool 'SonarQubeScanner'
+            // }
+            steps {
+                withSonarQubeEnv('SonarQubeServer') {
+                  //sh 'mvn sonar:sonar'
+                    //sh 'mvn -f API/myallianz/pom.xml sonar:sonar'
+                    //sh 'mvn -f API/myallianz/pom.xml sonar:sonar -Dsonar.host.url=http://10.10.10.84:9000 -Dsonar.login=admin -Dsonar.password=admin'
+                 // sh 'mvn -f API/myallianz/pom.xml -X org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar -Dsonar.host.url=http://localhost:7345 -Dsonar.login=admin -Dsonar.password=sonar@AzIT'
+                 // bat "mvn -f API/myallianz/pom.xml -X org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar -Dsonar.host.url=http://10.10.10.12:9000"
+                    bat "mvn -f pom.xml -X org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar -Dsonar.host.url=http://localhost:80/sonarqube -Dsonar.login=admin -Dsonar.password=sonar@AzIT"
+                } // SonarQube taskId is automatically attached to the pipeline context
+            }
+        }
+
+    /*  stage("Quality Gate"){
+    steps {
+      echo "Quality-gate checking...";
+        script {
+            timeout(time: 1, unit: 'HOURS') {
+                def qg = waitForQualityGate()
+                if (qg.status != 'OK') {
+                    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                }
+            }
+        }
+    }
+} */
+
+
+    }
+    post {
+        always {
+            echo "This will always run";
+             emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+        success {
+            echo "This will run only if success"
+        }
+        failure {
+            echo "This will run only if failed"
+        }
+        unstable {
+            echo "This will run only if the run was marked as unstable"
+        }
+        changed {
+            echo "This will run only if the state of the pipeline has changed"
+            echo "For example, if the pipeline was previously failing but is now successful"
+        }
+    }
+}

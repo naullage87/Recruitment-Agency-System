@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CV_template" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="0" uuid="4add3f55-ff8b-49e3-9116-91ec00ced9a7">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="firstName" class="java.lang.String">
+		<fieldDescription><![CDATA[firstName]]></fieldDescription>
+	</field>
+	<field name="lastName" class="java.lang.String">
+		<fieldDescription><![CDATA[lastName]]></fieldDescription>
+	</field>
+	<field name="dateOfBirth" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfBirth]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.Character">
+		<fieldDescription><![CDATA[gender]]></fieldDescription>
+	</field>
+	<field name="maried" class="java.lang.Character">
+		<fieldDescription><![CDATA[maried]]></fieldDescription>
+	</field>
+	<field name="nationality" class="java.lang.String">
+		<fieldDescription><![CDATA[nationality]]></fieldDescription>
+	</field>
+	<field name="nic" class="java.lang.String">
+		<fieldDescription><![CDATA[nic]]></fieldDescription>
+	</field>
+	<field name="address1" class="java.lang.String">
+		<fieldDescription><![CDATA[address1]]></fieldDescription>
+	</field>
+	<field name="address2" class="java.lang.String">
+		<fieldDescription><![CDATA[address2]]></fieldDescription>
+	</field>
+	<field name="address3" class="java.lang.String">
+		<fieldDescription><![CDATA[address3]]></fieldDescription>
+	</field>
+	<field name="telephone" class="java.lang.String">
+		<fieldDescription><![CDATA[telephone]]></fieldDescription>
+	</field>
+	<field name="mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[mobile]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<field name="schoolEducations" class="java.util.Collection">
+		<fieldDescription><![CDATA[schoolEducations]]></fieldDescription>
+	</field>
+	<field name="higherEducations" class="java.util.Collection">
+		<fieldDescription><![CDATA[higherEducations]]></fieldDescription>
+	</field>
+	<field name="professionalExperiances" class="java.util.Collection">
+		<fieldDescription><![CDATA[professionalExperiances]]></fieldDescription>
+	</field>
+	<field name="skillsAndAchievments" class="java.util.Collection">
+		<fieldDescription><![CDATA[skillsAndAchievments]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement x="-10" y="-20" width="595" height="128" backcolor="#28A3EB" uuid="e3fada59-50db-4ae3-9aaf-d90b367e2fb7"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineStyle="Solid" lineColor="#F0CC00"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="6" y="-10" width="565" height="43" forecolor="#FFFFFF" uuid="561aa489-b2f9-43e8-b0d7-d8f620b1e573"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Black" size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{firstName}+" "+$F{lastName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="33" width="60" height="13" forecolor="#FFFFFF" uuid="da7717d6-6d48-4408-9599-49cfa86756d1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="46" width="60" height="13" forecolor="#FFFFFF" uuid="27fd41df-5dc7-4020-983f-371568e528ce">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Telephone]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="66" y="33" width="300" height="13" forecolor="#FFFFFF" uuid="193a72e4-7817-4e32-880c-67494d40fef0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address1}+", "+$F{address2}+", "+$F{address3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="46" width="120" height="13" forecolor="#FFFFFF" uuid="0cb0aa36-ad04-425c-8ae1-636d140b68af">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telephone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="186" y="46" width="60" height="13" forecolor="#FFFFFF" uuid="28a062c4-f094-40a1-bd8b-706279d95769">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="246" y="46" width="120" height="13" forecolor="#FFFFFF" uuid="34358a53-61b8-478e-9f7c-4986ffb71374">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="59" width="60" height="13" forecolor="#FFFFFF" uuid="d03ff38f-0033-4a3b-a8e8-173c0ad59fbd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="66" y="59" width="120" height="13" forecolor="#FFFFFF" uuid="b20bb86c-be57-4029-a71c-90890e3cd71e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="376" y="33" width="60" height="13" forecolor="#FFFFFF" uuid="4088e3fe-dda2-43e6-9c40-8889b42588c0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="33" width="135" height="13" forecolor="#FFFFFF" uuid="88444762-f59d-47c5-b081-5f74de9364a8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gender}.equals( 'M' )?"Male":"Female"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="376" y="46" width="60" height="13" forecolor="#FFFFFF" uuid="3f122a56-dd19-40c3-8363-f5f530a2e699">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Maried]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="46" width="135" height="13" forecolor="#FFFFFF" uuid="fd601f19-c9fd-4e1f-afde-41340deda222">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{maried}.equals('Y' )?"Yes":"No"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="376" y="59" width="60" height="13" forecolor="#FFFFFF" uuid="6994d805-7e90-4f2f-a2d3-8d2090619549">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="59" width="135" height="13" forecolor="#FFFFFF" uuid="dbf6c1d6-df0c-499f-9630-d788548d029f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nic}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-10" y="108" width="595" height="1" forecolor="#FFD900" uuid="62aa6dfe-3dfa-47db-8a8a-372e052bbde3"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="6" y="72" width="60" height="13" forecolor="#FFFFFF" uuid="0249c9c4-de03-49e1-a13a-800d129a33fb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Nationality]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="66" y="72" width="120" height="13" forecolor="#FFFFFF" uuid="37b8fe46-a59c-4917-880f-bc9879212072">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nationality}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="376" y="72" width="60" height="13" forecolor="#FFFFFF" uuid="b3087d63-818f-47e1-ac13-eebd562bd8bb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<textField pattern="M/d/yy">
+				<reportElement x="436" y="72" width="135" height="13" forecolor="#FFFFFF" uuid="ad6613e4-9560-47c1-8387-a41449ac11bc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateOfBirth}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<subreport overflowType="Stretch">
+				<reportElement x="0" y="0" width="571" height="100" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="2ca35e52-5dbe-44f4-8edb-a6b8286874a5"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{professionalExperiances})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"/work_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="100">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport overflowType="Stretch">
+				<reportElement x="0" y="0" width="571" height="100" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="55198717-bd5e-4da2-9cc3-5e343f67fc90"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{higherEducations})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"/high_edu_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="100">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport overflowType="Stretch">
+				<reportElement x="0" y="0" width="571" height="100" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="1741f16b-c0a6-4d95-9f2d-01d634dea97e"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{schoolEducations})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"/schl_edu_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="100">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport overflowType="Stretch">
+				<reportElement x="0" y="0" width="571" height="100" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="5f8f5fb7-6f5f-4d52-aac6-e80052f796f6"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{skillsAndAchievments})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"/skil_edu_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement x="-10" y="0" width="595" height="20" backcolor="#28A3EB" uuid="8c9d9203-23c0-451f-8346-6a6654b386af">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</pageFooter>
+</jasperReport>
