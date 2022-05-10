@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  isMockEnabled: true, // You have to switch this, when your real back-end is done
+  baseUrl: 'http://localhost:8080/',
+  localApiUrl: 'http://localhost:8080/',
 };
 
 /*
