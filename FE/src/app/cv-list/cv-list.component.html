@@ -1,0 +1,156 @@
+<div class="container mt-5">
+  <h5>Existing CV List</h5>
+
+  <div class="row">
+    <div class="form-group col-md-4">
+      <label for="gender">Job sector</label>
+      <select [(ngModel)]="data.jobSectorId" name="gender" id="jobSectorId" (ngModelChange)="search()"
+              class="form-control form-select">
+        <option value="1">IT-Hardware/Networks/Systems</option>
+        <option value="2">Accounting/Auditing/Finance</option>
+        <option value="3">Banking/Insurance</option>
+        <option value="4">Sales/Marketing/Merchandising</option>
+        <option value="5">HR/Training</option>
+        <option value="6">Corporate Management/Analysts</option>
+        <option value="7">Office Admin/Secretary/Receptionist</option>
+        <option value="8">Civil Eng/Interior Design/Architecture</option>
+        <option value="9">IT-Telecoms</option>
+        <option value="10">Customer Relations/Public Relations</option>
+        <option value="11">Logistics/Warehouse/Transport</option>
+        <option value="12">Eng-Mech/Auto/Elec</option>
+        <option value="13">Manufacturing/Operations</option>
+        <option value="14">Media/Advert/Communication</option>
+        <option value="15">Hotels/Restaurants/Food</option>
+        <option value="16">Hospitality/Tourism</option>
+        <option value="17">Sports/Fitness/Recreation</option>
+        <option value="18">Hospital/Nursing/Healthcare</option>
+        <option value="19">Legal/Law</option>
+        <option value="20">Supervision/Quality Control</option>
+        <option value="21">Apparel/Clothing</option>
+        <option value="22">Ticketing/Airline/Marine</option>
+        <option value="23">Teaching/Academic/Library</option>
+        <option value="24">R&D/Science/Research</option>
+        <option value="25">Agriculture/Dairy/Environment</option>
+        <option value="26">Security</option>
+        <option value="27">Fashion/Design/Beauty</option>
+        <option value="28">International Development</option>
+        <option value="29">KPO/BPO</option>
+        <option value="30">Imports/Exports</option>
+
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="gender">School education</label>
+      <select [(ngModel)]="data.schoolEducationQualification" [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="search()" id="qualification"
+              class="form-control form-select">
+        <option value="G.C.E O/L" selected>G.C.E O/L</option>
+        <option value="G.C.E A/L">G.C.E A/L</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Number of passes</label>
+      <input type="text" (keyup)="search()" [(ngModel)]="data.minimumPasses" [ngModelOptions]="{standalone: true}"
+             class="form-control"
+             id="name" placeholder="Name">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="gender">Higher education</label>
+      <select [(ngModel)]="data.awardId" [ngModelOptions]="{standalone: true}" (ngModelChange)="search()" id="awardId"
+              class="form-control form-select">
+        <option value="1" selected>Higher National Diploma</option>
+        <option value="2">Diploma</option>
+        <option value="3">Degree</option>
+        <option value="4">Masters</option>
+        <option value="5">Professional</option>
+        <option value="6">Certificate</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="gender">Professional experience in</label>
+      <select [(ngModel)]="data.professionalExperianceJobSectorId" name="gender" id="jobSectorId"
+              (ngModelChange)="search()" class="form-control form-select">
+        <option value="1">IT-Hardware/Networks/Systems</option>
+        <option value="2">Accounting/Auditing/Finance</option>
+        <option value="3">Banking/Insurance</option>
+        <option value="4">Sales/Marketing/Merchandising</option>
+        <option value="5">HR/Training</option>
+        <option value="6">Corporate Management/Analysts</option>
+        <option value="7">Office Admin/Secretary/Receptionist</option>
+        <option value="8">Civil Eng/Interior Design/Architecture</option>
+        <option value="9">IT-Telecoms</option>
+        <option value="10">Customer Relations/Public Relations</option>
+        <option value="11">Logistics/Warehouse/Transport</option>
+        <option value="12">Eng-Mech/Auto/Elec</option>
+        <option value="13">Manufacturing/Operations</option>
+        <option value="14">Media/Advert/Communication</option>
+        <option value="15">Hotels/Restaurants/Food</option>
+        <option value="16">Hospitality/Tourism</option>
+        <option value="17">Sports/Fitness/Recreation</option>
+        <option value="18">Hospital/Nursing/Healthcare</option>
+        <option value="19">Legal/Law</option>
+        <option value="20">Supervision/Quality Control</option>
+        <option value="21">Apparel/Clothing</option>
+        <option value="22">Ticketing/Airline/Marine</option>
+        <option value="23">Teaching/Academic/Library</option>
+        <option value="24">R&D/Science/Research</option>
+        <option value="25">Agriculture/Dairy/Environment</option>
+        <option value="26">Security</option>
+        <option value="27">Fashion/Design/Beauty</option>
+        <option value="28">International Development</option>
+        <option value="29">KPO/BPO</option>
+        <option value="30">Imports/Exports</option>
+
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Years of experience</label>
+      <input type="number" (keyup)="search()" [(ngModel)]="data.professionalExperianceYears"
+             [ngModelOptions]="{standalone: true}"
+             class="form-control"
+             id="name" placeholder="Name">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="name">Skils and achievement</label>
+      <input type="text" (keyup)="search()" [(ngModel)]="data.skill" [ngModelOptions]="{standalone: true}"
+             class="form-control"
+             id="name" placeholder="Name">
+    </div>
+    <div class="form-group col-md-1">
+      <label for="name">&nbsp;</label>
+      <button type="button" (click)="reset()" class="btn btn-outline-success mx-2 form-control ">Reset</button>
+    </div>
+    <div class="form-group col-md-1">
+      <label for="name">&nbsp;</label>
+      <button type="button" (click)="logout()" class="btn btn-outline-dark mx-2 pull-right form-control">Log Out</button>
+    </div>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Telephone</th>
+      <th scope="col">Email</th>
+      <th scope="col">CV</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of tableData; let i=index">
+      <th>{{i}}</th>
+      <td>{{data.firstName}}</td>
+      <td>{{data.lastName}}</td>
+      <td>{{data.dateOfBirth}}</td>
+      <td>{{data.telephone}}</td>
+      <td>{{data.email}}</td>
+      <td>
+        <button type="button" (click)="download(data.id)" class="btn btn-outline-success mx-2  mb-1">Download CV
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

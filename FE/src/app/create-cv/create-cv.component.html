@@ -1,0 +1,352 @@
+<div class="container-fluid mt-3 p-5">
+  <h5>Create CV</h5>
+
+  <form>
+    <div class="row">
+
+      <div class="form-group col-md-4">
+        <label for="gender">Job Sector</label>
+        <select [(ngModel)]="resume.jobSectorId" name="gender" id="jobSectorId"  class="form-control form-select">
+          <option value="1">IT-Hardware/Networks/Systems</option>
+          <option value="2">Accounting/Auditing/Finance</option>
+          <option value="3">Banking/Insurance</option>
+          <option value="4">Sales/Marketing/Merchandising</option>
+          <option value="5">HR/Training</option>
+          <option value="6">Corporate Management/Analysts</option>
+          <option value="7">Office Admin/Secretary/Receptionist</option>
+          <option value="8">Civil Eng/Interior Design/Architecture</option>
+          <option value="9">IT-Telecoms</option>
+          <option value="10">Customer Relations/Public Relations</option>
+          <option value="11">Logistics/Warehouse/Transport</option>
+          <option value="12">Eng-Mech/Auto/Elec</option>
+          <option value="13">Manufacturing/Operations</option>
+          <option value="14">Media/Advert/Communication</option>
+          <option value="15">Hotels/Restaurants/Food</option>
+          <option value="16">Hospitality/Tourism</option>
+          <option value="17">Sports/Fitness/Recreation</option>
+          <option value="18">Hospital/Nursing/Healthcare</option>
+          <option value="19">Legal/Law</option>
+          <option value="20">Supervision/Quality Control</option>
+          <option value="21">Apparel/Clothing</option>
+          <option value="22">Ticketing/Airline/Marine</option>
+          <option value="23">Teaching/Academic/Library</option>
+          <option value="24">R&D/Science/Research</option>
+          <option value="25">Agriculture/Dairy/Environment</option>
+          <option value="26">Security</option>
+          <option value="27">Fashion/Design/Beauty</option>
+          <option value="28">International Development</option>
+          <option value="29">KPO/BPO</option>
+          <option value="30">Imports/Exports</option>
+
+        </select>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="firstName">First Name</label>
+        <input type="text" [(ngModel)]="resume.firstName" class="form-control" name="firstName" id="firstName"
+               placeholder="First Name">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="lastName">Last Name</label>
+        <input type="text" [(ngModel)]="resume.lastName" class="form-control" name="lastName" id="lastName"
+               placeholder="Last Name">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="resume.email" name="email" class="form-control" id="email"
+               placeholder="Email">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Mobile</label>
+        <input type="tel" [(ngModel)]="resume.mobile" name="mobile" class="form-control" id="mobile"
+               placeholder="Mobile">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Telephone</label>
+        <input type="tel" [(ngModel)]="resume.telephone" name="telephone" class="form-control" id="telephone"
+               placeholder="Telephone">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">NIC</label>
+        <input type="text" [(ngModel)]="resume.nic" name="nic" class="form-control" id="nic"
+               placeholder="NIC">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Date Of Birth</label>
+        <input type="date" [(ngModel)]="resume.dateOfBirth" name="dateOfBirth" class="form-control" id="dateOfBirth"
+               placeholder="Date Of Birth">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Address 1</label>
+        <input type="text" [(ngModel)]="resume.address1" name="address1" class="form-control" id="address1"
+               placeholder="Address 1">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Address 2</label>
+        <input type="text" [(ngModel)]="resume.address2" name="address2" class="form-control" id="address2"
+               placeholder="Address 2">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Address 3</label>
+        <input type="text" [(ngModel)]="resume.address3" name="address3" class="form-control" id="address3"
+               placeholder="Address 3">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="gender">Gender</label>
+        <select [(ngModel)]="resume.gender" name="gender" id="gender" class="form-control form-select">
+          <option value="M" selected>Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="email">Nationality</label>
+        <input type="text" [(ngModel)]="resume.nationality" name="nationality" class="form-control" id="nationality"
+               placeholder="Nationality">
+      </div>
+
+      <div class="form-group mt-4 col-md-4">
+        <div class="form-check">
+          <input class="form-check-input" name="maried" [(ngModel)]="resume.maried" type="checkbox" id="maried">
+          <label class="form-check-label" for="maried">
+            Married
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3 mb-3">
+      <button class="btn btn-secondary col-2" (click)="addSchool()">Add School Educations</button>
+    </div>
+    <div class="row" *ngFor="let school of resume.schoolEducations; let i=index">
+
+      <div class="form-group col-md-3">
+        <label for="gender">Qualification</label>
+        <select [(ngModel)]="school.qualification" [ngModelOptions]="{standalone: true}" id="qualification"
+                class="form-control form-select">
+          <option value="G.C.E O/L" selected>G.C.E O/L</option>
+          <option value="G.C.E A/L">G.C.E A/L</option>
+        </select>
+      </div>
+
+
+      <div class="form-group col-md-3">
+        <label for="email">Scheme</label>
+        <input type="text" [(ngModel)]="school.scheme" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="scheme"
+               placeholder="Scheme">
+      </div>
+
+
+      <div class="form-group col-md-2">
+        <label for="email">Date Of Achieved</label>
+        <input type="date" [(ngModel)]="school.dateOfAchived" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="dateOfAchived"
+               placeholder="Date Of Achieved">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="email">Number Of Passes</label>
+        <input type="number" [(ngModel)]="school.numberOfPasses" [ngModelOptions]="{standalone: true}"
+               class="form-control"
+               id="numberOfPasses"
+               placeholder="number Of Passes">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="email">&nbsp;</label>
+        <button class="btn btn-outline-danger form-control" (click)="resume.schoolEducations.splice(i, 1)">Remove
+        </button>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <button class="btn btn-secondary mt-5 col-2 mb-3" (click)="addHSchool()">Add Higher Educations</button>
+    </div>
+    <div class="row" *ngFor="let school of resume.higherEducations; let i=index">
+
+      <div class="form-group col-md-2">
+        <label for="gender">Award</label>
+        <select [(ngModel)]="school.awardId" [ngModelOptions]="{standalone: true}" id="awardId"
+                class="form-control form-select">
+          <option value="1" selected>Higher National Diploma</option>
+          <option value="2">Diploma</option>
+          <option value="3">Degree</option>
+          <option value="4">Masters</option>
+          <option value="5">Professional</option>
+          <option value="6">Certificate</option>
+        </select>
+      </div>
+
+
+      <div class="form-group col-md-2">
+        <label for="email">Affiliated Institute</label>
+        <input type="text" [(ngModel)]="school.affiliatedInstitute" [ngModelOptions]="{standalone: true}"
+               class="form-control" id="institiuteOfStudy"
+               placeholder="Affiliated Institute">
+      </div>
+
+
+      <div class="form-group col-md-2">
+        <label for="areaOfStudy">Area Of Study</label>
+        <input type="text" [(ngModel)]="school.areaOfStudy" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="areaOfStudy"
+               placeholder="Area Of Study">
+      </div>
+
+
+      <div class="form-group col-md-3">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="school.description" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="description"
+               placeholder="Description">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="result">Results</label>
+        <select [(ngModel)]="school.result" [ngModelOptions]="{standalone: true}" id="result"
+                class="form-control form-select">
+          <option value="1" selected>Pass</option>
+          <option value="2">Pending Results</option>
+          <option value="3">Currently Following</option>
+        </select>
+      </div>
+
+
+      <div class="form-group col-md-1">
+        <label for="email">&nbsp;</label>
+        <button class="btn btn-outline-danger form-control" (click)="resume.higherEducations.splice(i, 1)">Remove
+        </button>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <button class="btn btn-secondary mt-5 col-2 mb-3" (click)="addExp()">Add Professional Experiances</button>
+    </div>
+    <div class="row mb-5" *ngFor="let school of resume.professionalExperiances; let i=index">
+
+      <div class="form-group col-md-3">
+        <label for="gender">Job Sector</label>
+        <select [(ngModel)]="school.jobSectorId" name="gender" id="jobSectorId" class="form-control form-select">
+          <option value=1>IT-Hardware/Networks/Systems</option>
+          <option value="2">Accounting/Auditing/Finance</option>
+          <option value="3">Banking/Insurance</option>
+          <option value="4">Sales/Marketing/Merchandising</option>
+          <option value="5">HR/Training</option>
+          <option value="6">Corporate Management/Analysts</option>
+          <option value="7">Office Admin/Secretary/Receptionist</option>
+          <option value="8">Civil Eng/Interior Design/Architecture</option>
+          <option value="9">IT-Telecoms</option>
+          <option value="10">Customer Relations/Public Relations</option>
+          <option value="11">Logistics/Warehouse/Transport</option>
+          <option value="12">Eng-Mech/Auto/Elec</option>
+          <option value="13">Manufacturing/Operations</option>
+          <option value="14">Media/Advert/Communication</option>
+          <option value="15">Hotels/Restaurants/Food</option>
+          <option value="16">Hospitality/Tourism</option>
+          <option value="17">Sports/Fitness/Recreation</option>
+          <option value="18">Hospital/Nursing/Healthcare</option>
+          <option value="19">Legal/Law</option>
+          <option value="20">Supervision/Quality Control</option>
+          <option value="21">Apparel/Clothing</option>
+          <option value="22">Ticketing/Airline/Marine</option>
+          <option value="23">Teaching/Academic/Library</option>
+          <option value="24">R&D/Science/Research</option>
+          <option value="25">Agriculture/Dairy/Environment</option>
+          <option value="26">Security</option>
+          <option value="27">Fashion/Design/Beauty</option>
+          <option value="28">International Development</option>
+          <option value="29">KPO/BPO</option>
+          <option value="30">Imports/Exports</option>
+
+        </select>
+      </div>
+
+
+      <div class="form-group col-md-3">
+        <label for="organization">Organization</label>
+        <input type="text" [(ngModel)]="school.organization" [ngModelOptions]="{standalone: true}"
+               class="form-control" id="organization"
+               placeholder="Organization">
+      </div>
+
+
+      <div class="form-group col-md-3">
+        <label for="designation">Designation</label>
+        <input type="text" [(ngModel)]="school.designation" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="designation"
+               placeholder="Designation">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="fromDate">From Date</label>
+        <input type="date" [(ngModel)]="school.fromDate" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="fromDate"
+               placeholder="From Date">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="toDate">To Date</label>
+        <input type="date" [(ngModel)]="school.toDate" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="toDate"
+               placeholder="To Date">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="school.description" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="description"
+               placeholder="Description">
+      </div>
+
+      <div class="form-group col-md-1">
+        <label for="email">&nbsp;</label>
+        <button class="btn btn-outline-danger form-control" (click)="resume.professionalExperiances.splice(i, 1)">Remove
+        </button>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <button class="btn btn-secondary mt-5 col-2 mb-3" (click)="addSkill()">Add Skills and Achievements</button>
+    </div>
+    <div class="row" *ngFor="let school of resume.skillsAndAchievments; let i=index">
+
+      <div class="form-group col-md-9">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="school.description" [ngModelOptions]="{standalone: true}" class="form-control"
+               id="description"
+               placeholder="Description">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="email">&nbsp;</label>
+        <button class="btn btn-outline-danger form-control" (click)="resume.skillsAndAchievments.splice(i, 1)">Remove
+        </button>
+      </div>
+
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="updated">
+      Updated successfully.
+    </div>
+    <button type="button" (click)="createCv()" class="btn btn-primary pull-right mb-1">Update CV</button>
+    <button type="button" (click)="download()" class="btn btn-outline-success mx-2 pull-right mb-1">Download CV</button>
+    <button type="button" (click)="logout()" class="btn btn-outline-dark mx-2 pull-right mb-1">Log Out</button>
+
+  </form>
+
+</div>
